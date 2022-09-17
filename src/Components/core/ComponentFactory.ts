@@ -1,5 +1,5 @@
-import { StyleController } from "../Style";
-import ComponentFrame from "./ComponentFrame";
+import { StyleController } from "../../Style";
+import {ComponentFrame} from "./ComponentFrame";
 
 export class ComponentFactory {
     styler: StyleController;

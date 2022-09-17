@@ -1,7 +1,7 @@
-import Virtual__DOOM from "../Core/V_doom";
-import { StyleController } from "../Style";
+import Virtual__DOOM from "../../Core/V_doom";
+import { StyleController } from "../../Style";
 
-class ComponentFrame extends StyleController{
+export class ComponentFrame extends StyleController{
     id: string;
     constructor(id: string, tagName: string, styler: StyleController) {
         super()
@@ -11,13 +11,14 @@ class ComponentFrame extends StyleController{
         this.setElement(this.element)
     }
 
-    hug(...elements: (ComponentFrame)[]) {
-        elements?.forEach((e) => this.element?.insertAdjacentElement('beforeend', e.element!))
+    hug(...elements: (ComponentFrame|null)[]) {
+        console.log('hi')
+        elements?.forEach((e) => this.element?.insertAdjacentElement('beforeend', e?.element!))
         return this
     }
 
-    insertMeIn(component: ComponentFrame) {
-        component.element?.insertAdjacentElement('beforeend', this.element!)
+    insertMeIn(component: ComponentFrame|null) {
+        component?.element?.insertAdjacentElement('beforeend', this.element!)
         return this
     }
 
@@ -26,5 +27,3 @@ class ComponentFrame extends StyleController{
         return this
     }
 }
-
-export default ComponentFrame
