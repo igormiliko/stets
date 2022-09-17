@@ -5,6 +5,7 @@ import { ComponentFrame } from "../core/ComponentFrame";
 export class Logo extends Component {
   constructor(factory: ComponentFactory) {
     super(factory);
+    this.preRender()
   }
 
   initialDimension = 352;
