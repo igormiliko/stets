@@ -31,12 +31,14 @@ export class StyleController {
     return this;
   }
 
-  borderColor(
+  border(
+    style: string,
+    size: number,
     color: keyof ColorPallete["colors"],
     element?: typeof this.element
   ) {
     this.setElement(element);
-    this.element!.style.borderColor = this.pallete[color];
+    this.element!.style.border = `${style} ${size}px ${this.pallete[color]}`;
     return this;
   }
 

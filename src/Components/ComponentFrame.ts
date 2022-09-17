@@ -11,13 +11,13 @@ class ComponentFrame extends StyleController{
         this.setElement(this.element)
     }
 
-    insertElement(elements: (HTMLElement | null | undefined)[]) {
-        elements?.forEach((e) => this.element?.insertAdjacentElement('beforeend', e!))
+    hug(...elements: (ComponentFrame)[]) {
+        elements?.forEach((e) => this.element?.insertAdjacentElement('beforeend', e.element!))
         return this
     }
 
-    insertedIn(element: Element) {
-        element?.insertAdjacentElement('beforeend', element)
+    insertMeIn(component: ComponentFrame) {
+        component.element?.insertAdjacentElement('beforeend', this.element!)
         return this
     }
 

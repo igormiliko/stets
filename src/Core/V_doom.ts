@@ -9,6 +9,7 @@ class Virtual__DOOM {
     Virtual__DOOM.document.body.style.margin = "0";
     Virtual__DOOM.gateway!.style.width = "100vw";
     Virtual__DOOM.gateway!.style.height = "100vh";
+    Virtual__DOOM.gateway!.style.overflow = "hidden";
   }
 
   get $V_instance() {
