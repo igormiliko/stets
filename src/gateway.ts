@@ -20,7 +20,7 @@ logo.preRender()
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
 
-Container.display("flex");
+Container.display("flex").justify("center").align("center");
 
 Container.hug(logo.render())
 

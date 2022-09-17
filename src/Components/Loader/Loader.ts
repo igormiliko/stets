@@ -11,7 +11,8 @@ export class Logo extends Component {
   circles: (null | ComponentFrame)[] = [];
   redDot: null | ComponentFrame = null;
   orangeLine: null | ComponentFrame = null;
-
+  textBox: null | ComponentFrame = null;
+  logoWrapper: null | ComponentFrame = null;
   preRender(
     callback: () => void = () => {
       return;
@@ -23,8 +24,15 @@ export class Logo extends Component {
     this.circles.push(this.comp_factory.make("circle-4", "div"));
     this.redDot = this.comp_factory.make("red-dot", "div");
     this.orangeLine = this.comp_factory.make("orange-line", "div");
+    this.textBox = this.comp_factory.make("impd", "div");
+    this.logoWrapper = this.comp_factory.make("logo-wrapper", "div");
     callback();
     return this;
+  }
+
+  private stylingLogoWrapper() {
+    this.logoWrapper
+      ?.fashion("width")("600px").fashion('transform')('scale(0.5)')
   }
 
   private stylingCircles() {
@@ -38,8 +46,8 @@ export class Logo extends Component {
         .bgColor(ix % 2 ? "background" : "background2")
         .border("solid", !ix ? 4 : 1, "cold_1")
         .fashion("borderRadius")("8888px")
-        .fashion("margin-inline-start")(`auto`)
-        .fashion("margin-bottom")("16px");
+        .fashion("margin-inline-start")(ix > 0 ? `auto` : '')
+        .fashion("margin-bottom")(ix > 0 ? "16px" : '0px');
       this.initialDimension -= 88;
     });
   }
@@ -51,11 +59,9 @@ export class Logo extends Component {
       .fashion("borderRadius")("9999px")
       .display("flex")
       .fashion("font-size")("48px")
-      .type("Igor M P Delgado")
       .align("center")
       .fashion("position")("relative")
-      .fashion("white-space")("nowrap")
-
+      .fashion("white-space")("nowrap");
   }
 
   private stylingOrangeLine() {
@@ -65,20 +71,32 @@ export class Logo extends Component {
       .fashion("position")("absolute")
       .fashion("right")("7px")
       .fashion("text-align")("end")
-      .fashion("text-align")("end")
+      .fashion("text-align")("end");
+  }
+
+  private stylingTextBox() {
+    this.textBox
+      ?.type("Igor M P Delgado")
+      .fashion("fontWeight")("thin")
+      .fashion("marginTop")("66px")
+      .fashion("marginLeft")("-3.6px")
+      .fontSize("lg");
   }
 
   render() {
     this.stylingOrangeLine();
     this.stylingRedDot();
     this.stylingCircles();
-    this.redDot?.hug(this.orangeLine)
+    this.stylingTextBox();
+    this.stylingLogoWrapper();
+    this.logoWrapper?.hug(this.circles[0]);
+    this.redDot?.hug(this.orangeLine, this.textBox);
     this.circles[this.circles.length - 1]?.hug(this.redDot);
 
     this.circles.forEach((circle, ix) => {
       if (this.circles[ix + 1]) circle?.hug(this.circles[ix + 1]);
     });
 
-    return this.circles[0];
+    return this.logoWrapper;
   }
 }
