@@ -1,3 +1,5 @@
+import { ComponentFrame } from "../Core/ComponentFrame";
+
 export class MediaQueriesController {
   static device__width = window.innerWidth;
   static device__height = window.innerWidth;
@@ -23,21 +25,17 @@ export class MediaQueriesController {
     });
   }
 
-  protected ApplyInBrakPoint(breakPoint: keyof TBreakPoints, call: () => any) {
+  protected ApplyInBreakPoint(breakPoint: keyof TBreakPoints, call: () => ComponentFrame | undefined) {
     let timer: any = null;
     (() =>
       window.addEventListener("resize", () => {
         clearTimeout(timer);
         timer = setTimeout(() => {
-
-          console.log(breakPoint)
-          console.log(this.getCurrentBreakPoint())
           if (breakPoint === this.getCurrentBreakPoint()) {
-            call();
+            call()
           }
         }, 200);
       }))();
-    return MediaQueriesController.currentBreakPoint;
   }
 
   private getCurrentBreakPoint() {
@@ -60,23 +58,29 @@ export class MediaQueriesController {
     return current;
   }
 
-  xs(call: any) {
-    this.ApplyInBrakPoint('xs', call)
+   xs(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('xs', call)
+    return call()
   }
-  sm(call: any) {
-    this.ApplyInBrakPoint('sm', call)
+  sm(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('sm', call)
+    return call()
   }
-  md(call: any) {
-    this.ApplyInBrakPoint('md', call)
+  md(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('md', call)
+    return call()
   }
-  lg(call: any) {
-    this.ApplyInBrakPoint('lg', call)
+  lg(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('lg', call)
+    return call()
   }
-  xl(call: any) {
-    this.ApplyInBrakPoint('xl', call)
+  xl(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('xl', call)
+    return call()
   }
-  xxl(call: any) {
-    this.ApplyInBrakPoint('xxl', call)
+  xxl(call: () => ComponentFrame | undefined) {
+    this.ApplyInBreakPoint('xxl', call)
+    return call()
   }
 }
 

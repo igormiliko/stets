@@ -11,29 +11,6 @@ export class StyleController extends MediaQueriesController {
     super();
   }
 
-  applyInBreakPoint(breakPoint: keyof TBreakPoints) {
-    return () => {
-      window.addEventListener(
-        "load",
-        () => {
-          if (breakPoint === MediaQueriesController.currentBreakPoint) {
-            alert("I'm in" + MediaQueriesController.currentBreakPoint);
-          }
-        },
-        false
-      );
-      window.addEventListener(
-        "resize",
-        () => {
-          if (breakPoint === MediaQueriesController.currentBreakPoint) {
-            alert("I'm in" + MediaQueriesController.currentBreakPoint);
-          }
-        },
-        false
-      );
-    }
-  }
-
   protected setElement(element?: typeof this.element) {
     try {
       if (this.element) {
@@ -121,7 +98,7 @@ export class StyleController extends MediaQueriesController {
     return this;
   }
 
-  fashion(CSSprop: any, element?: typeof this.element) {
+  stylize(CSSprop: any, element?: typeof this.element) {
     if (!element) {
       element = this.element;
     }

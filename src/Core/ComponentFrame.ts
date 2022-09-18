@@ -1,9 +1,9 @@
-import Virtual__DOOM from "../../Core/V_doom";
-import { StyleController } from "../../Style";
+import Virtual__DOOM from "./V_doom";
+import { StyleController } from "../Style";
 
 export class ComponentFrame extends StyleController{
     id: string;
-    constructor(id: string, tagName: string, styler: StyleController) {
+    constructor(id: string, tagName: string) {
         super()
         this.id = id
         this.element = Virtual__DOOM.document.createElement(tagName)

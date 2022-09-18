@@ -1,4 +1,4 @@
-import { StyleController } from "../../Style";
+import { StyleController } from "../Style";
 import {ComponentFrame} from "./ComponentFrame";
 
 export class ComponentFactory {
@@ -7,7 +7,7 @@ export class ComponentFactory {
         this.styler = Styler
     }
     make(tag: string, id: string) {
-        return new ComponentFrame(tag, id, this.styler)
+        return new ComponentFrame(tag, id)
     }
 }
 

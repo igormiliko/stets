@@ -1,5 +1,4 @@
 import { ComponentFactory } from "./ComponentFactory";
-import { ComponentFrame } from "./ComponentFrame";
 
 export abstract class Component {
   protected comp_factory: ComponentFactory;

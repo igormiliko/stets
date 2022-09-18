@@ -1,11 +1,11 @@
-import { Component } from "../core/AbstractComponent";
-import { ComponentFactory } from "../core/ComponentFactory";
-import { ComponentFrame } from "../core/ComponentFrame";
+import { Component } from "../../Core/AbstractComponent";
+import { ComponentFactory } from "../../Core/ComponentFactory";
+import { ComponentFrame } from "../../Core/ComponentFrame";
 
 export class Logo extends Component {
   constructor(factory: ComponentFactory) {
     super(factory);
-    this.preRender()
+    this.preRender();
   }
 
   initialDimension = 352;
@@ -33,7 +33,16 @@ export class Logo extends Component {
 
   private stylingLogoWrapper() {
     this.logoWrapper
-      ?.fashion("width")("600px").fashion('transform')('scale(0.5)')
+      ?.xs(() =>
+        this.logoWrapper
+          ?.stylize("transform")("scale(0.3)")
+          .stylize("marginBottom")("20vh")
+      )
+      ?.md(() =>
+        this.logoWrapper?.stylize("width")("600px")?.stylize("transform")(
+          "scale(0.5)"
+        )
+      );
   }
 
   private stylingCircles() {
@@ -46,9 +55,9 @@ export class Logo extends Component {
         .fontColor("white")
         .bgColor(ix % 2 ? "background" : "background2")
         .border("solid", !ix ? 4 : 1, "cold_1")
-        .fashion("borderRadius")("8888px")
-        .fashion("margin-inline-start")(ix > 0 ? `auto` : '')
-        .fashion("margin-bottom")(ix > 0 ? "16px" : '0px');
+        .stylize("borderRadius")("8888px")
+        .stylize("margin-inline-start")(ix > 0 ? `auto` : "")
+        .stylize("margin-bottom")(ix > 0 ? "16px" : "0px");
       this.initialDimension -= 88;
     });
   }
@@ -57,30 +66,30 @@ export class Logo extends Component {
     this.redDot
       ?.measurement([8, 8])
       .bgColor("warm_1")
-      .fashion("borderRadius")("9999px")
+      .stylize("borderRadius")("9999px")
       .display("flex")
-      .fashion("font-size")("48px")
+      .stylize("font-size")("48px")
       .align("center")
-      .fashion("position")("relative")
-      .fashion("white-space")("nowrap");
+      .stylize("position")("relative")
+      .stylize("white-space")("nowrap");
   }
 
   private stylingOrangeLine() {
     this.orangeLine
       ?.measurement([299.5, 2])
       .bgColor("warm_2")
-      .fashion("position")("absolute")
-      .fashion("right")("7px")
-      .fashion("text-align")("end")
-      .fashion("text-align")("end");
+      .stylize("position")("absolute")
+      .stylize("right")("7px")
+      .stylize("text-align")("end")
+      .stylize("text-align")("end");
   }
 
   private stylingTextBox() {
     this.textBox
       ?.type("Igor M P Delgado")
-      .fashion("fontWeight")("thin")
-      .fashion("marginTop")("66px")
-      .fashion("marginLeft")("-3.6px")
+      .stylize("fontWeight")("thin")
+      .stylize("marginTop")("66px")
+      .stylize("marginLeft")("-3.6px")
       .fontSize("lg");
   }
 
