@@ -27,15 +27,17 @@ export class MediaQueriesController {
 
   protected ApplyInBreakPoint(breakPoint: keyof TBreakPoints, call: () => ComponentFrame | undefined) {
     let timer: any = null;
-    (() =>
-      window.addEventListener("resize", () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          if (breakPoint === this.getCurrentBreakPoint()) {
-            call()
-          }
-        }, 200);
-      }))();
+    ['resize', 'onload'].map((e) => {
+      (() =>
+        window.addEventListener(e, () => {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            if (breakPoint === this.getCurrentBreakPoint()) {
+              call()
+            }
+          }, 200);
+        }))();
+    })
   }
 
   private getCurrentBreakPoint() {

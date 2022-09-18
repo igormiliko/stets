@@ -5,7 +5,8 @@ export abstract class Component {
   constructor(factory: ComponentFactory) {
     this.comp_factory = factory;
   }
-  preRender(callback?: () => void) {}
-  render() {}
-  destroy() {}
+  abstract preRender(...args: any): unknown
+  abstract mount(...args: any): unknown
+  abstract render(...args: any): unknown
+  abstract destroy(...args: any): unknown
 }

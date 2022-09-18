@@ -33,16 +33,9 @@ export class Logo extends Component {
 
   private stylingLogoWrapper() {
     this.logoWrapper
-      ?.xs(() =>
-        this.logoWrapper
-          ?.stylize("transform")("scale(0.3)")
-          .stylize("marginBottom")("20vh")
-      )
-      ?.md(() =>
-        this.logoWrapper?.stylize("width")("600px")?.stylize("transform")(
+      ?.stylize("width")("600px")?.stylize("transform")(
           "scale(0.5)"
-        )
-      );
+      )
   }
 
   private stylingCircles() {
@@ -93,6 +86,14 @@ export class Logo extends Component {
       .fontSize("lg");
   }
 
+  mount() {
+    return 
+  }
+
+  destroy() {
+    return 
+  }
+
   render() {
     this.stylingOrangeLine();
     this.stylingRedDot();
@@ -110,3 +111,4 @@ export class Logo extends Component {
     return this.logoWrapper;
   }
 }
+
