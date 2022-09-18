@@ -1,10 +1,38 @@
 import PalleteOfColors, { ColorPallete } from "./ColorPallete";
+import { MediaQueriesController } from "./MediaQueriesController";
 import typography, { Typography } from "./Typography";
 
-export class StyleController {
+export class StyleController extends MediaQueriesController {
   pallete: ColorPallete["colors"] = PalleteOfColors.colors;
   typography: Typography["fontSize"] = typography.fontSize;
   element: HTMLElement | null | undefined = null;
+
+  constructor() {
+    super();
+  }
+
+  applyInBreakPoint(breakPoint: keyof TBreakPoints) {
+    return () => {
+      window.addEventListener(
+        "load",
+        () => {
+          if (breakPoint === MediaQueriesController.currentBreakPoint) {
+            alert("I'm in" + MediaQueriesController.currentBreakPoint);
+          }
+        },
+        false
+      );
+      window.addEventListener(
+        "resize",
+        () => {
+          if (breakPoint === MediaQueriesController.currentBreakPoint) {
+            alert("I'm in" + MediaQueriesController.currentBreakPoint);
+          }
+        },
+        false
+      );
+    }
+  }
 
   protected setElement(element?: typeof this.element) {
     try {
@@ -53,10 +81,7 @@ export class StyleController {
     return this;
   }
 
-  fontSize(
-    size: keyof Typography["fontSize"],
-    element?: typeof this.element
-  ) {
+  fontSize(size: keyof Typography["fontSize"], element?: typeof this.element) {
     this.setElement(element);
     this.element!.style.fontSize = this.typography[size];
     return this;
@@ -95,42 +120,6 @@ export class StyleController {
     }`;
     return this;
   }
-
-  // m(
-  //   [l, t, r, b]: number[],
-  //   measurement: TCSSmeasurementUnits,
-  //   element?: typeof this.element
-  // ) {
-  //   this.setElement(element);
-  //   this.element!.style.marginLeft = String(l ? l : r ? r : l) + measurement
-  //   this.element!.style.marginTop = String(t ? t : b ? b : l) + measurement
-  //   this.element!.style.marginRight = String(r ? r : l ? l : l) + measurement
-  //   this.element!.style.marginBottom = String(b ? b : t ? t : l) + measurement
-  // }
-
-  // p(
-  //   [l, t, r, b]: number[],
-  //   measurement: TCSSmeasurementUnits,
-  //   element?: typeof this.element
-  // ) {
-  //   this.setElement(element);
-  //   this.element!.style.paddingLeft = String(l ? l : r ? r : l) + measurement
-  //   this.element!.style.paddingTop = String(t ? t : b ? b : l) + measurement
-  //   this.element!.style.paddingRight = String(r ? r : l ? l : l) + measurement
-  //   this.element!.style.paddingBottom = String(b ? b : t ? t : l) + measurement
-  // }
-
-  // mAbs(
-  //   [l, t, r, b]: number[],
-  //   measurement: TCSSmeasurementUnits,
-  //   element?: typeof this.element
-  // ) {
-  //   this.setElement(element);
-  //   this.element!.style.left = String(l) + measurement
-  //   this.element!.style.top = String(t ? t : l) + measurement
-  //   this.element!.style.right = String(r ? r : l) + measurement
-  //   this.element!.style.bottom = String(b ? b : t ? t : l) + measurement
-  // }
 
   fashion(CSSprop: any, element?: typeof this.element) {
     if (!element) {

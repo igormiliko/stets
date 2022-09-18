@@ -12,7 +12,6 @@ export class ComponentFrame extends StyleController{
     }
 
     hug(...elements: (ComponentFrame|null)[]) {
-        console.log('hi')
         elements?.forEach((e) => this.element?.insertAdjacentElement('beforeend', e?.element!))
         return this
     }
