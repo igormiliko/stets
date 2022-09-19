@@ -31,8 +31,8 @@ export class SquareDots extends Component {
   ) {
     dot
       .stylize("borderRadius")("8888px")
-      .measurement([8, 8], "px")
-      .bgColor(color);
+      // .measurement([8, 8], "px")
+      // .bgColor(color);
 
     return dot;
   }
@@ -41,8 +41,8 @@ export class SquareDots extends Component {
     const cells = "24px 24px 24px 24px 24px 24px 24px 24px";
     this.squaresDotsContainer?.xs(() =>
       this.squaresDotsContainer
-        ?.display("grid")
-        .stylize("grid-template-columns")(cells)
+        // ?.display("grid")
+        ?.stylize("grid-template-columns")(cells)
         .stylize("grid-template-rows")(cells)
         .stylize("transform")("rotate(45deg)")
     );

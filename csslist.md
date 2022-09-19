@@ -48,12 +48,12 @@
 
 - [ ] outline-offset: "Set the space between an outline and the border edge of an element."
 
-- [ ] outline-style: "Sets a style for an outline."
+- [ ] outline-style: "Sets a style for an outline."border()
 
 - [ ] outline-width: "Sets the width of the outline."
 
 ## 4. Border_piston⭕ **
-- [ ] border: "Sets the width, style, and color for all four sides of an element's border."
+- [x] border: "Sets the width, style, and color for all four sides of an element's border."
 
 - [ ] border-bottom: "Sets the width, style, and color of the bottom border of an element."
 

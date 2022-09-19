@@ -39,7 +39,7 @@ export class Logo extends Component {
   private stylingLogoWrapper() {
     this.logoWrapper
       ?.stylize("width")("600px")
-      ?.xs(() => this.logoWrapper?.stylize("transform")("scale(0.25)").stylize("marginBottom")("20vh"))
+      ?.xs(() => this.logoWrapper?.stylize("transform")("scale(0.3)").stylize("marginBottom")("20vh"))
       ?.md(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
       ?.sm(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
       ?.lg(() => this.logoWrapper?.stylize("transform")("scale(0.8)"))
@@ -49,14 +49,14 @@ export class Logo extends Component {
   private stylingCircles() {
     this.circles.forEach((circle, ix) => {
       circle
-        ?.measurement([this.initialDimension, this.initialDimension])
-        .align("center")
-        .display("flex")
-        .justify("center")
-        .fontColor("white")
-        .bgColor(ix % 2 ? "background" : "background2")
-        .border("solid", !ix ? 4 : 1, "cold_1")
-        .stylize("borderRadius")("8888px")
+        // ?.measurement([this.initialDimension, this.initialDimension])
+        // .align("center")
+        // .display("flex")
+        // .justify("center")
+        // .fontColor("white")
+        // .bgColor(ix % 2 ? "background" : "background2")
+        // .border("solid", !ix ? 4 : 1, "cold_1")
+        ?.stylize("borderRadius")("8888px")
         .stylize("margin-inline-start")(ix > 0 ? `auto` : "")
         .stylize("margin-bottom")(ix > 0 ? "16px" : "0px");
       this.initialDimension -= 88;
@@ -65,21 +65,21 @@ export class Logo extends Component {
 
   private stylingRedDot() {
     this.redDot
-      ?.measurement([8, 8])
-      .bgColor("warm_1")
-      .stylize("borderRadius")("9999px")
-      .display("flex")
+      // ?.measurement([8, 8])
+      // .bgColor("warm_1")
+      ?.stylize("borderRadius")("9999px")
+      // .display("flex")
       .stylize("font-size")("48px")
-      .align("center")
+      // .align("center")
       .stylize("position")("relative")
       .stylize("white-space")("nowrap");
   }
 
   private stylingOrangeLine() {
     this.orangeLine
-      ?.measurement([299.5, 2])
-      .bgColor("warm_2")
-      .stylize("position")("absolute")
+      // ?.measurement([299.5, 2])
+      // .bgColor("warm_2")
+      ?.stylize("position")("absolute")
       .stylize("right")("7px")
       .stylize("text-align")("end")
       .stylize("text-align")("end");
@@ -91,7 +91,7 @@ export class Logo extends Component {
       .stylize("fontWeight")("thin")
       .stylize("marginTop")("66px")
       .stylize("marginLeft")("-3.6px")
-      .fontSize("lg");
+      // .fontSize("lg");
   }
 
   mount() {
