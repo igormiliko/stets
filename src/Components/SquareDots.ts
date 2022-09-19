@@ -1,7 +1,7 @@
 import { Component } from "../Core/AbstractComponent";
 import { ComponentFactory } from "../Core/ComponentFactory";
 import { ComponentFrame } from "../Core/ComponentFrame";
-import { ColorPallete } from "../Style/ColorPallete";
+import { ColorPallete } from "../Style/config/ColorPallete";
 
 export class SquareDots extends Component {
   squaresDotsContainer: ComponentFrame | null = null;

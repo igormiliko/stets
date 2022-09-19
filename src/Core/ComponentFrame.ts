@@ -1,5 +1,5 @@
 import Virtual__DOOM from "./V_doom";
-import { StyleController } from "../Style";
+import { StyleController } from "../Style/StyleEngine";
 
 export class ComponentFrame extends StyleController{
     id: string;

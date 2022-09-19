@@ -1,4 +1,5 @@
-﻿## 1. Animation_piston 🚶🏻
+﻿Animation_piston
+## 1. Animation_piston 🚶🏻
 - [ ] animation: "Specifies the keyframe-based animations."
 
 - [ ] animation-delay: "Specifies when the animation will start."
@@ -51,7 +52,7 @@
 
 - [ ] outline-width: "Sets the width of the outline."
 
-## 4. Border_piston⭕
+## 4. Border_piston⭕ **
 - [ ] border: "Sets the width, style, and color for all four sides of an element's border."
 
 - [ ] border-bottom: "Sets the width, style, and color of the bottom border of an element."
@@ -145,7 +146,7 @@
 
 - [ ] columns: "A shorthand property for setting column-width and column-count properties."
 
-## 6. Display_piston📺
+## 6. Display_piston📺 ***
 - [ ] display: "Specifies how an element is displayed onscreen."
 
 - [ ] flex: "Specifies the components of a flexible length."
@@ -194,7 +195,7 @@
 
 - [ ] box-sizing: "Alter the default CSS box model."
 
-## 7. Font_piston🔣
+## 7. Font_piston🔣 ***
 - [ ] vertical-align: "Sets the vertical positioning of an element relative to the current text baseline."
 
 - [ ] word-break: "Specifies how to break lines within words."

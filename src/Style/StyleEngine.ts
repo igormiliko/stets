@@ -1,6 +1,6 @@
-import PalleteOfColors, { ColorPallete } from "./ColorPallete";
-import { MediaQueriesController } from "./MediaQueriesController";
-import typography, { Typography } from "./Typography";
+import PalleteOfColors, { ColorPallete } from "./config/ColorPallete";
+import { MediaQueriesController } from "./components/MediaQueriesController";
+import typography, { Typography } from "./config/Typography";
 
 export class StyleController extends MediaQueriesController {
   pallete: ColorPallete["colors"] = PalleteOfColors.colors;

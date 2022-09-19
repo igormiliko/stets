@@ -1,8 +1,8 @@
 import { ComponentFactory } from "./Core/ComponentFactory";
 import { Logo } from "./Components/Logo/Logo";
 import Virtual__DOOM from "./Core/V_doom";
-import StyleController from "./Style/";
-import ColorPallete from "./Style/ColorPallete";
+import StyleController from "./Style/StyleEngine";
+import ColorPallete from "./Style/config/ColorPallete";
 import { SquareDots } from "./Components/SquareDots";
 
 new Virtual__DOOM(document);
@@ -23,11 +23,6 @@ const dots_square_container = comp_factory.make("dots-square-container", "div");
 const dots_dark = new SquareDots(comp_factory, "square-dots-container-dark").render("dk-grey");
 const dots_light = new SquareDots(comp_factory, "square-dots-container-light").render("lh-grey")!;
 
-const a = `
-  aksjdklajsd
-`
-
-
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
 Container.display("flex").justify("center").align("center")
@@ -44,7 +39,7 @@ await new Promise (r => {
     // .stylize("right")("152px")
     .xs(() =>
       dots_square_container
-        .stylize("transform")("scale(0.4)")
+        .stylize("transform")("scale(0.3)")
         .stylize("top")("48vh")
         // .stylize("right")("0px")
     )

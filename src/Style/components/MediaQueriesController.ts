@@ -1,4 +1,4 @@
-import { ComponentFrame } from "../Core/ComponentFrame";
+import { ComponentFrame } from "../../Core/ComponentFrame";
 
 export class MediaQueriesController {
   protected static $engine: MediaQueriesController;

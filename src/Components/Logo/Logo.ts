@@ -39,7 +39,7 @@ export class Logo extends Component {
   private stylingLogoWrapper() {
     this.logoWrapper
       ?.stylize("width")("600px")
-      ?.xs(() => this.logoWrapper?.stylize("transform")("scale(0.3)").stylize("marginBottom")("20vh"))
+      ?.xs(() => this.logoWrapper?.stylize("transform")("scale(0.25)").stylize("marginBottom")("20vh"))
       ?.md(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
       ?.sm(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
       ?.lg(() => this.logoWrapper?.stylize("transform")("scale(0.8)"))
