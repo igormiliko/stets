@@ -27,15 +27,23 @@ export class Logo extends Component {
     this.orangeLine = this.comp_factory.make("orange-line", "div");
     this.textBox = this.comp_factory.make("impd", "div");
     this.logoWrapper = this.comp_factory.make("logo-wrapper", "div");
+    this.stylingOrangeLine();
+    this.stylingRedDot();
+    this.stylingCircles();
+    this.stylingTextBox();
+    this.stylingLogoWrapper();
     callback();
     return this;
   }
 
   private stylingLogoWrapper() {
     this.logoWrapper
-      ?.stylize("width")("600px")?.stylize("transform")(
-          "scale(0.5)"
-      )
+      ?.stylize("width")("600px")
+      ?.xs(() => this.logoWrapper?.stylize("transform")("scale(0.3)").stylize("marginBottom")("20vh"))
+      ?.md(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
+      ?.sm(() => this.logoWrapper?.stylize("transform")("scale(0.3)"))
+      ?.lg(() => this.logoWrapper?.stylize("transform")("scale(0.8)"))
+      ?.xl(() => this.logoWrapper?.stylize("transform")("scale(1)"));
   }
 
   private stylingCircles() {
@@ -87,19 +95,14 @@ export class Logo extends Component {
   }
 
   mount() {
-    return 
+    return;
   }
 
   destroy() {
-    return 
+    return;
   }
 
   render() {
-    this.stylingOrangeLine();
-    this.stylingRedDot();
-    this.stylingCircles();
-    this.stylingTextBox();
-    this.stylingLogoWrapper();
     this.logoWrapper?.hug(this.circles[0]);
     this.redDot?.hug(this.orangeLine, this.textBox);
     this.circles[this.circles.length - 1]?.hug(this.redDot);
@@ -111,4 +114,3 @@ export class Logo extends Component {
     return this.logoWrapper;
   }
 }
-

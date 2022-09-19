@@ -18,8 +18,8 @@ export class SquareDots extends Component {
     id: string
   ) {
     this.squaresDotsContainer = this.comp_factory.make(
-      "div",
-      id
+      id,
+      "div"
     );
     callback(this);
     return this;

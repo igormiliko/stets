@@ -17,20 +17,20 @@ const comp_factory = new ComponentFactory(StyleController);
 const Container = comp_factory.make("main-container", "div");
 
 const logo = new Logo(comp_factory).render();
-logo?.xs(() =>
-  logo?.stylize("transform")("scale(0.3)").stylize("marginBottom")("20vh")
-);
 
-const dots_square_container = comp_factory.make("div", "dots-square-container");
+const dots_square_container = comp_factory.make("dots-square-container", "div");
 
 const dots_dark = new SquareDots(comp_factory, "square-dots-container-dark").render("dk-grey");
 const dots_light = new SquareDots(comp_factory, "square-dots-container-light").render("lh-grey")!;
 
+const a = `
+  aksjdklajsd
+`
 
 
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
-Container.display("flex").justify("center").align("center").stylize('overflow')('hidden');
+Container.display("flex").justify("center").align("center")
 
 await new Promise (r => {
   dots_square_container
@@ -48,16 +48,16 @@ await new Promise (r => {
         .stylize("top")("48vh")
         // .stylize("right")("0px")
     )
-    ?.sm(() => dots_square_container.stylize("right")("16vw").stylize("top")("40vh"))
-    ?.md(() => dots_square_container.stylize("right")("50vw"))
-    ?.lg(() => dots_square_container.stylize("right")("50vw"));
+    ?.sm(() => dots_square_container.stylize("right")("16vw").stylize("top")("40vh").stylize("transform")("scale(0.4)"))
+    ?.md(() => dots_square_container.stylize("right")("50vw").stylize("transform")("scale(0.4)").stylize("top")("40vh"))
+    ?.lg(() => dots_square_container.stylize("top")("50vh")?.stylize('right')('20vw').stylize('transform')('scale(0.6)'))
+    ?.xl(() => dots_square_container.stylize("top")("50vh")?.stylize('right')('25vw').stylize('transform')('scale(0.8)'));
     r(true)
 })
-
-var id: any = null;
-function myMove() {
-  var elem = dots_light?.element   
-  var pos = 0;
+//  component?.right('')
+let id: any = null;
+function moveDown() {
+  let pos = 0;
   clearInterval(id);
   id = setInterval(frame, 10);
   function frame() {
@@ -65,11 +65,11 @@ function myMove() {
       clearInterval(id);
     } else {
       pos++; 
-      elem!.style.top = pos + 'px'; 
+      dots_light!.element!.style.top = pos + 'px'; 
     }
   }
 }
-myMove()
+moveDown()
 
 Container.hug(logo, dots_square_container);
 

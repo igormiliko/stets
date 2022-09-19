@@ -41,7 +41,7 @@ export class MediaQueriesController {
       clearTimeout(timer);
       timer = setTimeout(() => {
         if (breakPoint === MediaQueriesController.getCurrentBreakPoint()) {
-          call()?.stylize('transition')('0.6s');
+          call()?.stylize('transition')('0.8s ease-in-out');
         }
       }, 200);
     }
@@ -57,7 +57,7 @@ export class MediaQueriesController {
     const $breakPointsTest: Array<(w: number) => keyof TBreakPoints | null> = [
       (w) => (w < 576 ? "xs" : null),
 
-      (w) => (w >= 576 && w < 768 ? "sm" : null),
+      (w) => (w >= 576 && w <= 768 ? "sm" : null),
 
       (w) => (w >= 768 && w < 992 ? "md" : null),
 
