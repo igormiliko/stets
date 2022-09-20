@@ -1,9 +1,7 @@
 import { ComponentFactory } from "./Core/ComponentFactory";
-import { Logo } from "./Components/Logo/Logo";
 import Virtual__DOOM from "./Core/V_doom";
 import StyleController from "./Style/StyleEngine";
 import ColorPallete from "./Style/config/ColorPallete";
-import { SquareDots } from "./Components/SquareDots";
 
 new Virtual__DOOM(document);
 Virtual__DOOM.gateway!.style.backgroundColor = ColorPallete.colors.background;

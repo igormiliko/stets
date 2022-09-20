@@ -55,69 +55,69 @@
 ## 4. Border_piston⭕ **
 - [x] border: "Sets the width, style, and color for all four sides of an element's border."
 
-- [ ] border-bottom: "Sets the width, style, and color of the bottom border of an element."
+- [x] border-bottom: "Sets the width, style, and color of the bottom border of an element."
 
-- [ ] border-bottom-color: "Sets the color of the bottom border of an element."
+- [x] border-bottom-color: "Sets the color of the bottom border of an element."
 
-- [ ] border-bottom-left-radius: "Defines the shape of the bottom-left border corner of an element."
+- [x] border-bottom-left-radius: "Defines the shape of the bottom-left border corner of an element."
 
-- [ ] border-bottom-right-radius: "Defines the shape of the bottom-right border corner of an element."
+- [x] border-bottom-right-radius: "Defines the shape of the bottom-right border corner of an element."
 
-- [ ] border-bottom-style: "Sets the style of the bottom border of an element."
+- [x] border-bottom-style: "Sets the style of the bottom border of an element."
 
-- [ ] border-bottom-width: "Sets the width of the bottom border of an element."
+- [x] border-bottom-width: "Sets the width of the bottom border of an element."
 
-- [ ] border-collapse: "Specifies whether table cell borders are connected or separated."
+- [x] border-collapse: "Specifies whether table cell borders are connected or separated."
 
-- [ ] border-color: "Sets the color of the border on all the four sides of an element."
+- [x] border-color: "Sets the color of the border on all the four sides of an element."
 
-- [ ] border-image: "Specifies how an image is to be used in place of the border styles."
+- [x] border-image: "Specifies how an image is to be used in place of the border styles."
 
-- [ ] border-image-outset: "Specifies the amount by which the border image area extends beyond the border box."
+- [x] border-image-outset: "Specifies the amount by which the border image area extends beyond the border box."
 
-- [ ] border-image-repeat: "Specifies whether the image-border should be repeated, rounded or stretched."
+- [x] border-image-repeat: "Specifies whether the image-border should be repeated, rounded or stretched."
 
-- [ ] border-image-slice: "Specifies the inward offsets of the image-border."
+- [x] border-image-slice: "Specifies the inward offsets of the image-border."
 
-- [ ] border-image-source: "Specifies the location of the image to be used as a border."
+- [x] border-image-source: "Specifies the location of the image to be used as a border."
 
-- [ ] border-image-width: "Specifies the width of the image-border."
+- [x] border-image-width: "Specifies the width of the image-border."
 
-- [ ] border-left: "Sets the width, style, and color of the left border of an element."
+- [x] border-left: "Sets the width, style, and color of the left border of an element."
 
-- [ ] border-left-color: "Sets the color of the left border of an element."
+- [x] border-left-color: "Sets the color of the left border of an element."
 
-- [ ] border-left-style: "Sets the style of the left border of an element."
+- [x] border-left-style: "Sets the style of the left border of an element."
 
-- [ ] border-left-width: "Sets the width of the left border of an element."
+- [x] border-left-width: "Sets the width of the left border of an element."
 
-- [ ] border-radius: "Defines the shape of the border corners of an element."
+- [x] border-radius: "Defines the shape of the border corners of an element."
 
-- [ ] border-right: "Sets the width, style, and color of the right border of an element."
+- [x] border-right: "Sets the width, style, and color of the right border of an element."
 
-- [ ] border-right-color: "Sets the color of the right border of an element."
+- [x] border-right-color: "Sets the color of the right border of an element."
 
-- [ ] border-right-style: "Sets the style of the right border of an element."
+- [x] border-right-style: "Sets the style of the right border of an element."
 
-- [ ] border-right-width: "Sets the width of the right border of an element."
+- [x] border-right-width: "Sets the width of the right border of an element."
 
-- [ ] border-spacing: "Sets the spacing between the borders of adjacent table cells."
+- [x] border-spacing: "Sets the spacing between the borders of adjacent table cells."
 
-- [ ] border-style: "Sets the style of the border on all the four sides of an element."
+- [x] border-style: "Sets the style of the border on all the four sides of an element."
 
-- [ ] border-top: "Sets the width, style, and color of the top border of an element."
+- [x] border-top: "Sets the width, style, and color of the top border of an element."
 
-- [ ] border-top-color: "Sets the color of the top border of an element."
+- [x] border-top-color: "Sets the color of the top border of an element."
 
-- [ ] border-top-left-radius: "Defines the shape of the top-left border corner of an element."
+- [x] border-top-left-radius: "Defines the shape of the top-left border corner of an element."
 
-- [ ] border-top-right-radius: "Defines the shape of the top-right border corner of an element."
+- [x] border-top-right-radius: "Defines the shape of the top-right border corner of an element."
 
-- [ ] border-top-style: "Sets the style of the top border of an element."
+- [x] border-top-style: "Sets the style of the top border of an element."
 
-- [ ] border-top-width: "Sets the width of the top border of an element."
+- [x] border-top-width: "Sets the width of the top border of an element."
 
-- [ ] border-width: "Sets the width of the border on all the four sides of an element."
+- [x] border-width: "Sets the width of the border on all the four sides of an element."
 
 ## 5. Grid_piston📶
 - [ ] empty-cells: "Show or hide borders and backgrounds of empty table cells."
