@@ -8,7 +8,7 @@ export class StyleController extends MediaQueriesController {
   pallete: ColorPallete["colors"] = PalleteOfColors.colors;
   typography: Typography["fontSize"] = typography.fontSize;
   element: HTMLElement | null | undefined = null;
-  Lines_Cilinder: Lines_piston | null;
+  Lines_Cilinder: Lines_piston | null = null;
 
   protected setElement(element?: typeof this.element) {
     try {
@@ -32,7 +32,7 @@ export class StyleController extends MediaQueriesController {
   }
 
   border(config: IBorder_config) {
-    this.Lines_Cilinder.Border_segment_ring().border(config)
+    this.Lines_Cilinder?.Border_segment_ring().border(config)
     return this
   }
 

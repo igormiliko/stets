@@ -1,11 +1,10 @@
-import {ColorPallete} from "../../../../config/ColorPallete";
+import { ColorPallete } from "../../../../config/ColorPallete";
 import { Border_image } from "./Border_image";
 
-
-type TBorder_ = [
+export type TBorder_ = [
   TBorder_styles | TGlobal_CSS_values,
-  TBorder_width?,
- (keyof ColorPallete["colors"])?
+  [TBorder_width?, TCSSmeasurementUnits?],
+  (keyof ColorPallete["colors"])
 ];
 
 export interface IBorder_config {
@@ -25,23 +24,22 @@ export interface IBorder_config {
   image?: Border_image | null;
 }
 
-
-export class Border implements IBorder_config{
+export class Border implements IBorder_config {
   border: TBorder_;
   constructor(border: TBorder_) {
-    this.border = border
+    this.border = border;
   }
-  left = null
-  top = null
-  right = null
-  bottom = null
-  x = null
-  y = null
-  color = null
-  style = null
-  radius = null
-  width = null
-  collapse = null
-  spacing = null
-  image = null
+  left = null;
+  top = null;
+  right = null;
+  bottom = null;
+  x = null;
+  y = null;
+  color = null;
+  style = null;
+  radius = null;
+  width = null;
+  collapse = null;
+  spacing = null;
+  image = null;
 }

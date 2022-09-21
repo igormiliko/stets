@@ -10,6 +10,15 @@ export class ColorPallete {
     'md-grey': "#888",
     'dk-grey': "#373737"
   };
+
+  getColor(color_name: string) {
+    try {
+      const COLOR: any = this.colors as unknown
+      return COLOR[color_name]
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 
 export default new ColorPallete();

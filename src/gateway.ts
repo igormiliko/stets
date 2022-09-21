@@ -17,11 +17,15 @@ const Container = comp_factory.make("main-container", "div");
 
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
-Container
-    .stylize('width')('100px')
-    .stylize('height')('100px')
-    .border({
-        border: ['dashed', 2, 'white']
-    })
+Container.stylize("width")("100px")
+  .stylize("height")("100px")
+  .stylize("backgroundColor")("#ccc")
+  .border({
+    border: ["groove", [200, "px"], "warm_1"],
+    radius: {
+        value: 9999,
+        measurement: 'px'
+    }
+  });
 
 Virtual__DOOM.gateway!.insertAdjacentElement("beforeend", Container.element!);
