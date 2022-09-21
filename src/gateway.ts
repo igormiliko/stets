@@ -17,6 +17,11 @@ const Container = comp_factory.make("main-container", "div");
 
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
-
+Container
+    .stylize('width')('100px')
+    .stylize('height')('100px')
+    .border({
+        border: ['dashed', 2, 'white']
+    })
 
 Virtual__DOOM.gateway!.insertAdjacentElement("beforeend", Container.element!);

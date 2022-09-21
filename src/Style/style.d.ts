@@ -8,3 +8,10 @@ type TBreakPoints = {
     xl: number;
     xxl: number;
 }
+
+type TGlobal_CSS_values = 
+|"inherit"
+|"initial"
+|"revert"
+|"revert-layer"
+|"unset"

@@ -6,7 +6,7 @@ export class Lines_piston extends Piston {
     super(element);
   }
 
-  border() {
+  Border_segment_ring() {
     return new Border_segment_ring(this);
   }
 }

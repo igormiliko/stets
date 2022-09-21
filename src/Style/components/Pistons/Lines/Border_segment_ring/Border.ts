@@ -1,31 +1,47 @@
-import { ColorPallete } from "../../../../config/ColorPallete";
+import {ColorPallete} from "../../../../config/ColorPallete";
+import { Border_image } from "./Border_image";
 
-export class Border {
-  width: number = 0;
-  radius: number = 0;
-  color: ColorPallete["colors"] | "" = "";
-  style:
-    | "dotted"
-    | "dashed"
-    | "solid"
-    | "double"
-    | "groove"
-    | "ridge"
-    | "inset"
-    | "outset"
-    | "none"
-    | "hidden" = "inset";
 
-  setWidth(w: number) {
-    this.width = w;
+type TBorder_ = [
+  TBorder_styles | TGlobal_CSS_values,
+  TBorder_width?,
+ (keyof ColorPallete["colors"])?
+];
+
+export interface IBorder_config {
+  border: TBorder_;
+  left?: TBorder_ | null;
+  top?: TBorder_ | null;
+  right?: TBorder_ | null;
+  bottom?: TBorder_ | null;
+  x?: TBorder_ | null;
+  y?: TBorder_ | null;
+  color?: keyof ColorPallete["colors"] | null;
+  style?: TBorder_styles | null;
+  radius?: TBorder_radius | null;
+  width?: TBorder_width | null;
+  collapse?: TBorder_collapse | null;
+  spacing?: TGlobal_CSS_values | number | null;
+  image?: Border_image | null;
+}
+
+
+export class Border implements IBorder_config{
+  border: TBorder_;
+  constructor(border: TBorder_) {
+    this.border = border
   }
-  setRadius(r: number) {
-    this.radius = r;
-  }
-  setColor(c: ColorPallete["colors"]) {
-    this.color = c;
-  }
-  setStyle(s: Border["style"]) {
-    this.style = s;
-  }
+  left = null
+  top = null
+  right = null
+  bottom = null
+  x = null
+  y = null
+  color = null
+  style = null
+  radius = null
+  width = null
+  collapse = null
+  spacing = null
+  image = null
 }

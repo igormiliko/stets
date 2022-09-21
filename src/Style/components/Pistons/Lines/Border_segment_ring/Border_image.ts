@@ -1,11 +1,11 @@
+import { ColorPallete } from "../../../../config/ColorPallete";
 export class Border_image {
-  source: string;
-  outset: number = 0;
-  repeat: "stretch" | "repeat" | "round" | "space" | "initial" | "inherit" =
-    "initial";
-  slice: string = "";
-  width: number = 0;
-  constructor(path: string) {
-    this.source = path
+  source: TBorder_image_source = "none";
+  outset: TBorder_image_outset = "initial";
+  repeat: TBorder_image_repeat = "initial";
+  slice: TBorder_image_slice = 0;
+  width: TBorder_image_width = 0;
+  constructor(path: TBorder_image_source) {
+    this.source = path;
   }
 }

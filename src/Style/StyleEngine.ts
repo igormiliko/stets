@@ -1,15 +1,14 @@
 import PalleteOfColors, { ColorPallete } from "./config/ColorPallete";
 import { MediaQueriesController } from "./components/MediaQueriesController";
 import typography, { Typography } from "./config/Typography";
+import { Lines_piston } from "./components/Pistons/Lines/Lines_piston";
+import { IBorder_config } from "./components/Pistons/Lines/Border_segment_ring/Border";
 
 export class StyleController extends MediaQueriesController {
   pallete: ColorPallete["colors"] = PalleteOfColors.colors;
   typography: Typography["fontSize"] = typography.fontSize;
   element: HTMLElement | null | undefined = null;
-
-  constructor() {
-    super();
-  }
+  Lines_Cilinder: Lines_piston | null;
 
   protected setElement(element?: typeof this.element) {
     try {
@@ -30,6 +29,11 @@ export class StyleController extends MediaQueriesController {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  border(config: IBorder_config) {
+    this.Lines_Cilinder.Border_segment_ring().border(config)
+    return this
   }
 
   
