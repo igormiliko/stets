@@ -1,67 +1,93 @@
 import ColorPallete from "../../../../config/ColorPallete";
 import { Lines_piston } from "../Lines_piston";
-import { Border, IBorder_config } from "./Border";
+import { IBorder_config } from "./Border";
+
+type TReturn_transform_in_border_style_propertie =
+  | "border"
+  | "borderLeft"
+  | "borderTop"
+  | "borderRight"
+  | "boredrBottom";
 
 export class Border_segment_ring {
   private piston: Lines_piston;
+  private border_config: IBorder_config | null = null;
   constructor(piston: Lines_piston) {
     this.piston = piston;
   }
 
-  getBORDER_CONFIG(border_config: IBorder_config) {
-    return new Border(border_config.border);
+  private transform_in_border_style_propertie(
+    prop: "border" | TDirections
+  ): "border" | "borderLeft" | "borderTop" | "borderRight" | "boredrBottom" {
+    return prop === "border"
+      ? prop
+      : (`border${
+          prop[0].toUpperCase() + prop.substring(1)
+        }` as TReturn_transform_in_border_style_propertie);
   }
 
-  border(config: IBorder_config) {
-    const _border = this.getBORDER_CONFIG(config);
-
-    _border.border[2] = ColorPallete.getColor(_border.border[2])
-
-    if (this.piston.element) {
-
-      console.log('Aion', _border?.border.join(" ").replace(",", ""))
-      this.piston.element.style.border = _border?.border.join(" ").replace(",", "")
-      this.piston.element.style['borderRadius'] = '9999px'
+  private apply_TBorder_(type: "border" | TDirections) {
+    try {
+      if (this.border_config) {
+        this.border_config[type]![2] = ColorPallete.getColor(
+          this.border_config[type]![2]
+        );
+        if (this.piston.element) {
+          this.piston.element.style[
+            this.transform_in_border_style_propertie(type)
+          ] = this.border_config[type]!.join(" ").replace(",", "");
+        }
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error(error);
     }
-    return this.piston.element;
   }
-  left() {
-    return this.piston.element;
+  private border() {
+    return this.apply_TBorder_("border");
   }
-  top() {
-    return this.piston.element;
+  private left() {
+    return this.apply_TBorder_("left");
   }
-  right() {
-    return this.piston.element;
+  private top() {
+    return this.apply_TBorder_("top");
   }
-  bottom() {
-    return this.piston.element;
+  private right() {
+    return this.apply_TBorder_("right");
   }
-  x() {
-    return this.piston.element;
+  private bottom() {
+    return this.apply_TBorder_("bottom");
   }
-  y() {
-    return this.piston.element;
-  }
-  color() {
-    return this.piston.element;
-  }
-  style() {
-    return this.piston.element;
-  }
-  radius() {
-    return this.piston.element;
-  }
-  width() {
-    return this.piston.element;
-  }
-  collapse() {
-    return this.piston.element;
-  }
-  spacing() {
-    return this.piston.element;
-  }
-  image() {
-    return this.piston.element;
+  // x() {
+  //   return this.piston.element;
+  // }
+  // y() {
+  //   return this.piston.element;
+  // }
+  // color() {
+  //   return this.piston.element;
+  // }
+  // style() {
+  //   return this.piston.element;
+  // }
+  // radius() {
+  //   return this.piston.element;
+  // }
+  // width() {
+  //   return this.piston.element;
+  // }
+  // collapse() {
+  //   return this.piston.element;
+  // }
+  // spacing() {
+  //   return this.piston.element;
+  // }
+  // image() {
+  //   return this.piston.element;
+  // }
+
+  init_config(config: IBorder_config) {
+    this.border_config = config;
+    Object.keys(this.border_config).map((key) => this[key]());
   }
 }

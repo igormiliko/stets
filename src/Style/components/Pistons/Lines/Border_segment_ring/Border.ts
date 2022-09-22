@@ -8,38 +8,18 @@ export type TBorder_ = [
 ];
 
 export interface IBorder_config {
-  border: TBorder_;
-  left?: TBorder_ | null;
-  top?: TBorder_ | null;
-  right?: TBorder_ | null;
-  bottom?: TBorder_ | null;
-  x?: TBorder_ | null;
-  y?: TBorder_ | null;
-  color?: keyof ColorPallete["colors"] | null;
-  style?: TBorder_styles | null;
-  radius?: TBorder_radius | null;
-  width?: TBorder_width | null;
-  collapse?: TBorder_collapse | null;
-  spacing?: TGlobal_CSS_values | number | null;
-  image?: Border_image | null;
-}
-
-export class Border implements IBorder_config {
-  border: TBorder_;
-  left = null;
-  top = null;
-  right = null;
-  bottom = null;
-  x = null;
-  y = null;
-  color = null;
-  style = null;
-  radius = null;
-  width = null;
-  collapse = null;
-  spacing = null;
-  image = null;
-  constructor(border: TBorder_) {
-    this.border = border;
-  }
+  border?: TBorder_;
+  left?: TBorder_;
+  top?: TBorder_;
+  right?: TBorder_;
+  bottom?: TBorder_;
+  x?: TBorder_;
+  y?: TBorder_;
+  color?: keyof ColorPallete["colors"];
+  style?: TBorder_styles;
+  radius?: TBorder_radius;
+  width?: TBorder_width;
+  collapse?: TBorder_collapse;
+  spacing?: TGlobal_CSS_values | number;
+  image?: Border_image;
 }

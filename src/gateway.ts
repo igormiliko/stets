@@ -21,52 +21,52 @@ Container.stylize("width")("100px")
   .stylize("height")("100px")
   .stylize("backgroundColor")("#ccc")
   .border({
-    border: ["groove", [200, "px"], "warm_1"],
-    radius: {
-      value: 9999,
-      measurement: "px",
-    },
-    bottom: ["groove", [200, "px"], "warm_1"],
-    left: ["groove", [200, "px"], "warm_1"],
-    right: ["groove", [200, "px"], "warm_1"],
-    top: ["groove", [200, "px"], "warm_1"],
-    collapse: "collapse",
-    color: "cold_1",
-    spacing: 9,
-    style: "groove",
-    width: {
-      value: "thick",
-      measurement: "px",
-    },
-    x: ["groove", [200, "px"], "warm_1"],
-    y: ["groove", [200, "px"], "warm_1"],
-    image: {
-      width: {
-        value: [
-          [9, 9],
-          [9, 9],
-        ],
-        measurement: [
-          ["px", "pt"],
-          ["%", "cm"],
-        ],
-      },
-      outset: {
-        values: [9, 9, 9, 9],
-        measurement: "mm",
-      },
-      repeat: "round",
-      slice: {
-        values: ["fill", "fill", 34, 22],
-        percent: true
-      },
-      source: {
-        colors: [["lh-grey", 12], ["background2", 555]],
-        to: ["bottom", "left"],
-        deg: -98,
-        repeat: true
-      }
-    }
+    // border: ["groove", [200, "px"], "warm_1"],
+    // radius: {
+    //   value: 9999,
+    //   measurement: "px",
+    // },
+    bottom: ["dotted", [65, "px"], "warm_2"],
+    left: ["dotted", [20, "px"], "cold_1"],
+    right: ["groove", [200, "px"], "dk-grey"],
+    top: ["double", [100, "px"], "warm_1"],
+    // collapse: "collapse",
+    // color: "cold_1",
+    // spacing: 9,
+    // style: "groove",
+    // width: {
+    //   value: "thick",
+    //   measurement: "px",
+    // },
+    // x: ["groove", [200, "px"], "warm_1"],
+    // y: ["groove", [200, "px"], "warm_1"],
+    // image: {
+    //   width: {
+    //     value: [
+    //       [9, 9],
+    //       [9, 9],
+    //     ],
+    //     measurement: [
+    //       ["px", "pt"],
+    //       ["%", "cm"],
+    //     ],
+    //   },
+    //   outset: {
+    //     values: [9, 9, 9, 9],
+    //     measurement: "mm",
+    //   },
+    //   repeat: "round",
+    //   slice: {
+    //     values: ["fill", "fill", 34, 22],
+    //     percent: true
+    //   },
+    //   source: {
+    //     colors: [["lh-grey", 12], ["background2", 555]],
+    //     to: ["bottom", "left"],
+    //     deg: -98,
+    //     repeat: true
+    //   }
+    // }
   });
 
 Virtual__DOOM.gateway!.insertAdjacentElement("beforeend", Container.element!);

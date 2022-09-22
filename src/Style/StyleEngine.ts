@@ -5,9 +5,9 @@ import { Lines_piston } from "./components/Pistons/Lines/Lines_piston";
 import { IBorder_config } from "./components/Pistons/Lines/Border_segment_ring/Border";
 
 export class StyleController extends MediaQueriesController {
+  element: HTMLElement | null | undefined = null;
   pallete: ColorPallete["colors"] = PalleteOfColors.colors;
   typography: Typography["fontSize"] = typography.fontSize;
-  element: HTMLElement | null | undefined = null;
   Lines_Cilinder: Lines_piston | null = null;
 
   protected setElement(element?: typeof this.element) {
@@ -32,7 +32,7 @@ export class StyleController extends MediaQueriesController {
   }
 
   border(config: IBorder_config) {
-    this.Lines_Cilinder?.Border_segment_ring().border(config)
+    this.Lines_Cilinder?.Border_segment_ring().init_config(config)
     return this
   }
 
