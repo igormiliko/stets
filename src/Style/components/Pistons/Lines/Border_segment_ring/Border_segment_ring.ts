@@ -13,7 +13,6 @@ export class Border_segment_ring {
   }
 
   border(config: IBorder_config) {
-    console.log(config);
     const _border = this.getBORDER_CONFIG(config);
 
     _border.border[2] = ColorPallete.getColor(_border.border[2])
@@ -23,7 +22,6 @@ export class Border_segment_ring {
       console.log('Aion', _border?.border.join(" ").replace(",", ""))
       this.piston.element.style.border = _border?.border.join(" ").replace(",", "")
       this.piston.element.style['borderRadius'] = '9999px'
-    
     }
     return this.piston.element;
   }

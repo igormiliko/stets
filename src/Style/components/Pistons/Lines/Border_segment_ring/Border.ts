@@ -26,9 +26,6 @@ export interface IBorder_config {
 
 export class Border implements IBorder_config {
   border: TBorder_;
-  constructor(border: TBorder_) {
-    this.border = border;
-  }
   left = null;
   top = null;
   right = null;
@@ -42,4 +39,7 @@ export class Border implements IBorder_config {
   collapse = null;
   spacing = null;
   image = null;
+  constructor(border: TBorder_) {
+    this.border = border;
+  }
 }

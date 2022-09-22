@@ -26,12 +26,18 @@ type TBorder_styles =
   | "none"
   | "hidden";
 
-type TBorder_width = TCustom_square<"thin" | "medium" | "thick" | TCSSmeasurementUnits>;
+type TBorder_width = TCustom_square<
+  "thin" | "medium" | "thick",
+  TCSSmeasurementUnits
+>;
 
 type TBorder_collapse = TGlobal_CSS_values | "collapse" | "separate";
 
-type TBorder_radius = TCustom_square<TCSSmeasurementUnits>;
-type TBorder_image_width = TCustom_square<TCSSmeasurementUnits | "auto">;
+type TBorder_radius = TCustom_square<number, TCSSmeasurementUnits>;
+type TBorder_image_width = TCustom_square<
+  number,
+  TCSSmeasurementUnits | "auto"
+>;
 
 type TBorder_image_outset =
   | {
@@ -56,45 +62,38 @@ type TBorder_image_repeat =
   | "inherit";
 
 type TBorder_image_slice =
-  | [
-      number | "fill",
-      (number | "fill")?,
-      (number | "fill")?,
-      (number | "fill")?
-    ]
-  | TGlobal_CSS_values
-  | number;
-
-type TBorder_image_source =
   | {
-      URL: string;
-      gradient: {
-        colors: [ColorPallete["colors"], number?][];
-        to?: [TDirections, TDirections?];
-        repeat?: boolean;
-        deg?: number;
-      };
+      values: [
+        number | "fill",
+        (number | "fill")?,
+        (number | "fill")?,
+        (number | "fill")?
+      ];
+      percent: boolean;
     }
   | TGlobal_CSS_values
-  | "none";
+  | number;
 
 type TDirections = "top" | "left" | "right" | "bottom";
 
-type TCustom_square<T> =
+type TCustom_square<V, M> =
   | {
       value:
-        | number
+        | (V | number)
         | TGlobal_CSS_values
-        | [number, number?, number?, number?]
-        | [[number], [number]]
-        | [[number, number], [number, number]]
-        | [[number, number, number], [number, number, number]];
+        | [V | number, (V | number)?, (V | number)?, (V | number)?]
+        | [[V | number], [V | number]]
+        | [[V | number, V | number], [V | number, V | number]]
+        | [
+            [V | number, V | number, V | number],
+            [V | number, V | number, V | number]
+          ];
       measurement:
-        | T
-        | [T, T?, T?, T?]
-        | [[T], [T]]
-        | [[T, T], [T, T]]
-        | [[T, T, T], [T, T, T]];
+        | M
+        | [M, M?, M?, M?]
+        | [[M], [M]]
+        | [[M, M], [M, M]]
+        | [[M, M, T], [M, M, M]];
     }
   | TGlobal_CSS_values
-  | number;
+  | (V | number);
