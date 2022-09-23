@@ -23,13 +23,15 @@ Container.stylize("width")("100px")
   .border({
     // border: ["groove", [200, "px"], "warm_1"],
     // radius: {
-    //   value: 9999,
-    //   measurement: "px",
-    // },
-    bottom: ["dotted", [65, "px"], "warm_2"],
-    left: ["dotted", [20, "px"], "cold_1"],
-    right: ["groove", [200, "px"], "dk-grey"],
-    top: ["double", [100, "px"], "warm_1"],
+      //   value: 9999,
+      //   measurement: "px",
+      // },
+      bottom: ["dotted", [65, "px"], "warm_2"],
+      left: ["dotted", [20, "px"], "cold_1"],
+      right: ["groove", [200, "px"], "dk-grey"],
+      top: ["double", [100, "px"], "warm_1"],
+      x: ["groove", [200, "px"], "warm_1"],
+    y: ["solid", [200, "px"], "cold_1"],
     // collapse: "collapse",
     // color: "cold_1",
     // spacing: 9,
@@ -38,8 +40,6 @@ Container.stylize("width")("100px")
     //   value: "thick",
     //   measurement: "px",
     // },
-    // x: ["groove", [200, "px"], "warm_1"],
-    // y: ["groove", [200, "px"], "warm_1"],
     // image: {
     //   width: {
     //     value: [

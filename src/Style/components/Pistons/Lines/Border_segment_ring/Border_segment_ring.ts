@@ -29,20 +29,20 @@ export class Border_segment_ring {
   private apply_TBorder_(type: "border" | TDirections) {
     try {
       if (this.border_config) {
-        this.border_config[type]![2] = ColorPallete.getColor(
-          this.border_config[type]![2]
-        );
-        if (this.piston.element) {
-          this.piston.element.style[
-            this.transform_in_border_style_propertie(type)
-          ] = this.border_config[type]!.join(" ").replace(",", "");
-        }
+        const config = this.border_config[type];
+
+        this.piston.element!.style[
+          this.transform_in_border_style_propertie(type)
+        ] = `${config![0]} ${config![1].join("")} ${ColorPallete.getColor(
+          config![2]
+        )}`;
         return this.piston.element;
       }
     } catch (error) {
       console.error(error);
     }
   }
+
   private border() {
     return this.apply_TBorder_("border");
   }
@@ -58,12 +58,35 @@ export class Border_segment_ring {
   private bottom() {
     return this.apply_TBorder_("bottom");
   }
-  // x() {
-  //   return this.piston.element;
-  // }
-  // y() {
-  //   return this.piston.element;
-  // }
+  private x() {
+    try {
+      this.border_config!.left = this.border_config!.x;
+      this.border_config!.right = this.border_config!.x;
+
+      this.left();
+      this.right();
+      return this.piston.element;
+    } catch (error) {
+      console.error("Error applying the x axis border", error);
+    }
+  }
+
+  private y() {
+    if (this.border_config) {
+      const shared_ = this.border_config.y?.copyWithin(
+        1,
+        this.border_config?.y.length
+      );
+      console.log(shared_);
+      this.border_config.top = shared_;
+      this.border_config.bottom = shared_;
+    }
+
+    this.top();
+    this.bottom();
+    return this.piston.element;
+  }
+
   // color() {
   //   return this.piston.element;
   // }
@@ -86,8 +109,13 @@ export class Border_segment_ring {
   //   return this.piston.element;
   // }
 
-  init_config(config: IBorder_config) {
-    this.border_config = config;
-    Object.keys(this.border_config).map((key) => this[key]());
+  async init_config(config: IBorder_config) {
+    try {
+      console.log(config);
+      this.border_config = config;
+      Object.keys(this.border_config).map((key) => this[key]());
+    } catch (error) {
+      console.error("Error initing the border config => ", error);
+    }
   }
 }
