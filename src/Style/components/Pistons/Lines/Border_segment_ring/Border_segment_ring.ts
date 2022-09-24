@@ -1,4 +1,5 @@
 import ColorPallete from "../../../../config/ColorPallete";
+import { Abstract_segment_ring } from "../../AbstractSegmentRing";
 import { Lines_piston } from "../Lines_piston";
 import { IBorder_config } from "./Border";
 
@@ -9,10 +10,11 @@ type TReturn_transform_in_border_style_propertie =
   | "borderRight"
   | "boredrBottom";
 
-export class Border_segment_ring {
+export class Border_segment_ring extends Abstract_segment_ring {
   private piston: Lines_piston;
   private border_config: IBorder_config | null = null;
   constructor(piston: Lines_piston) {
+    super();
     this.piston = piston;
   }
 
@@ -39,7 +41,7 @@ export class Border_segment_ring {
         return this.piston.element;
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error while apllying order style => ", error);
     }
   }
 
@@ -60,8 +62,12 @@ export class Border_segment_ring {
   }
   private x() {
     try {
-      this.border_config!.left = this.border_config!.x;
-      this.border_config!.right = this.border_config!.x;
+      if (this.border_config) {
+        const shared_ = this.border_config.x;
+
+        this.border_config!.left = shared_;
+        this.border_config!.right = shared_;
+      }
 
       this.left();
       this.right();
@@ -73,11 +79,7 @@ export class Border_segment_ring {
 
   private y() {
     if (this.border_config) {
-      const shared_ = this.border_config.y?.copyWithin(
-        1,
-        this.border_config?.y.length
-      );
-      console.log(shared_);
+      const shared_ = this.border_config.y;
       this.border_config.top = shared_;
       this.border_config.bottom = shared_;
     }
@@ -86,14 +88,18 @@ export class Border_segment_ring {
     this.bottom();
     return this.piston.element;
   }
+  radius() {
+    this.piston.element!.style.borderRadius = this.TREAT_TCustom_square(
+      this.border_config?.radius
+    );
+
+    return this.piston.element;
+  }
 
   // color() {
   //   return this.piston.element;
   // }
   // style() {
-  //   return this.piston.element;
-  // }
-  // radius() {
   //   return this.piston.element;
   // }
   // width() {
@@ -111,7 +117,6 @@ export class Border_segment_ring {
 
   async init_config(config: IBorder_config) {
     try {
-      console.log(config);
       this.border_config = config;
       Object.keys(this.border_config).map((key) => this[key]());
     } catch (error) {

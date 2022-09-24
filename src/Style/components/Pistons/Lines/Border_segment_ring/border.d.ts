@@ -33,7 +33,8 @@ type TBorder_width = TCustom_square<
 
 type TBorder_collapse = TGlobal_CSS_values | "collapse" | "separate";
 
-type TBorder_radius = TCustom_square<number, TCSSmeasurementUnits>;
+type TBorder_radius = TCustom_square<number, TCSSmeasurementUnits | "">;
+
 type TBorder_image_width = TCustom_square<
   number,
   TCSSmeasurementUnits | "auto"
@@ -87,13 +88,15 @@ type TCustom_square<V, M> =
         | [
             [V | number, V | number, V | number],
             [V | number, V | number, V | number]
-          ];
+          ]
+        | [(V | number)[], (V | number)[]];
       measurement:
         | M
         | [M, M?, M?, M?]
         | [[M], [M]]
         | [[M, M], [M, M]]
-        | [[M, M, T], [M, M, M]];
+        | [[M, M, M], [M, M, M]]
+        | [M[],M[]];
     }
   | TGlobal_CSS_values
   | (V | number);

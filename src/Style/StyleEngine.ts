@@ -32,7 +32,6 @@ export class StyleController extends MediaQueriesController {
   }
 
   border(config: IBorder_config) {
-    console.log(config)
     this.Lines_Cilinder?.Border_segment_ring().init_config(config)
     return this
   }
