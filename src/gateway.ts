@@ -34,7 +34,7 @@ Container.stylize("width")("100px")
     color: ["cold_1", "lh-grey", "warm_1", "warm_2"],
     // x: ["solid", [200, "px"], "background2"],
     // y: ["solid", [20, "px"], "warm_2"],
-    // spacing: 9,
+    spacing: "revert",
     style: ["solid", "dashed", "double", "dotted"],
     width: {
       value: 66,

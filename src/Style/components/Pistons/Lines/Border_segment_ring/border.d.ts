@@ -35,6 +35,16 @@ type TBorder_width = TCustom_square<
   TCSSmeasurementUnits
 >;
 
+type TBorder_spacing =
+  | TGlobal_CSS_values
+  | number
+  | {
+      value: number | [number, number];
+      measuerement:
+        | TCSSmeasurementUnits
+        | [TCSSmeasurementUnits, TCSSmeasurementUnits];
+    };
+
 type TBorder_collapse = TGlobal_CSS_values | "collapse" | "separate";
 
 type TBorder_radius = TCustom_square<number, TCSSmeasurementUnits>;

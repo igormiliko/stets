@@ -29,6 +29,6 @@ export interface IBorder_config {
   radius?: TBorder_radius;
   width?: TBorder_width;
   collapse?: TBorder_collapse;
-  spacing?: TGlobal_CSS_values | number;
+  spacing?: TBorder_spacing
   image?: Border_image;
 }

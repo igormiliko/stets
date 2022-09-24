@@ -161,9 +161,16 @@ export class Border_segment_ring extends Abstract_segment_ring {
       );
     }
   }
-  // spacing() {
-  //   return this.piston.element;
-  // }
+  spacing() {
+    try {
+      if(this.border_config) {
+        this.piston.element!.style.borderSpacing =  this.TREAT_TCustom_square(this.border_config?.spacing)
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error("Error while applying the border spacing propertie => ", error)
+    }
+  }
   // image() {
   //   return this.piston.element;
   // }
