@@ -19,18 +19,16 @@ Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 Container.stylize("width")("100px")
   .stylize("height")("100px")
   .stylize("backgroundColor")("#ccc")
-  .stylize("borderWidth")("2px")
-  // .stylize("borderStyle")("solid")
   .border({
     radius: {
-      value: [[400], [20, 25]],
-      measurement: [["px"], ["%"]],
+      value: 777,
+      measurement: "ch",
     },
     // bottom: ["dotted", [65, "px"], "warm_2"],
     // left: ["dotted", [20, "px"], "cold_1"],
     // right: ["groove", [200, "px"], "dk-grey"],
     // top: ["double", [100, "px"], "warm_1"],
-    border: ["groove", [200, "px"]],
+    // border: ["groove", [200, "px"]],
     // collapse: "collapse",
     // color: "cold_1",
     color: ["cold_1", "lh-grey", "warm_1", "warm_2"],
@@ -38,10 +36,10 @@ Container.stylize("width")("100px")
     // y: ["solid", [20, "px"], "warm_2"],
     // spacing: 9,
     style: ["solid", "dashed", "double", "dotted"],
-    // width: {
-    //   value: "thick",
-    //   measurement: "px",
-    // },
+    width: {
+      value: 66,
+      measurement: "px",
+    },
     // image: {
     //   width: {
     //     value: [

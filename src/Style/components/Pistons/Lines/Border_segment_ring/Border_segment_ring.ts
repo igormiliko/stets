@@ -146,9 +146,21 @@ export class Border_segment_ring extends Abstract_segment_ring {
     }
   }
 
-  // width() {
-  //   return this.piston.element;
-  // }
+  width() {
+    try {
+      if(this.border_config) {
+        this.piston.element!.style.borderWidth = this.TREAT_TCustom_square(
+          this.border_config?.width
+        )
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error(
+        "Error while apllying the border width propertie => ",
+        error
+      );
+    }
+  }
   // spacing() {
   //   return this.piston.element;
   // }
