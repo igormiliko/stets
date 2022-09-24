@@ -37,7 +37,7 @@ Container.stylize("width")("100px")
     // x: ["solid", [200, "px"], "background2"],
     // y: ["solid", [20, "px"], "warm_2"],
     // spacing: 9,
-    // style: "groove",
+    style: ["solid", "dashed", "double", "dotted"],
     // width: {
     //   value: "thick",
     //   measurement: "px",

@@ -111,8 +111,9 @@ export class Border_segment_ring extends Abstract_segment_ring {
   private color() {
     try {
       if (this.border_config) {
-        this.piston.element!.style.borderColor =
-        Array.isArray(this.border_config.color)
+        this.piston.element!.style.borderColor = Array.isArray(
+          this.border_config.color
+        )
           ? this.border_config.color
               .map((color) => (color ? ColorPallete.getColor(color) : ""))
               .join(" ")
@@ -127,9 +128,24 @@ export class Border_segment_ring extends Abstract_segment_ring {
     }
   }
 
-  // style() {
-  //   return this.piston.element;
-  // }
+  style() {
+    try {
+      if (this.border_config) {
+        this.piston.element!.style.borderStyle = Array.isArray(
+          this.border_config.style
+        )
+          ? this.border_config.style.join(" ")
+          : String(this.border_config.style);
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error(
+        "Error while apllying the border style propertie => ",
+        error
+      );
+    }
+  }
+
   // width() {
   //   return this.piston.element;
   // }

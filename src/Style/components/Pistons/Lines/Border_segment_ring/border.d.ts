@@ -26,6 +26,8 @@ type TBorder_styles =
   | "none"
   | "hidden";
 
+  type TBorder_styles_possibilities = TBorder_styles | [TBorder_styles,TBorder_styles?,TBorder_styles?,TBorder_styles?]
+
 type TBorder_width = TCustom_square<
   "thin" | "medium" | "thick",
   TCSSmeasurementUnits

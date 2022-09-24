@@ -25,7 +25,7 @@ export interface IBorder_config {
   x?: TBorder_;
   y?: TBorder_;
   color?: TBorder_color;
-  style?: TBorder_styles;
+  style?: TBorder_styles_possibilities;
   radius?: TBorder_radius;
   width?: TBorder_width;
   collapse?: TBorder_collapse;
