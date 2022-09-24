@@ -8,7 +8,7 @@ export class ColorPallete {
     white: "#fcfcfc",
     'lh-grey': "#D9D9D9",
     'md-grey': "#888",
-    'dk-grey': "#373737"
+    'dk-grey': "#373737",
   };
 
   getColor(color_name: string) {

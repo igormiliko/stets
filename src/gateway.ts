@@ -17,58 +17,25 @@ const Container = comp_factory.make("main-container", "div");
 
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 Container.stylize("width")("100px")
-.stylize("height")("100px")
-.stylize("backgroundColor")("#ccc")
-.border({
-  // Radius 1 - FAILED
-  // radius: {
-  //       value: 200,
-  //       measurement: "px",
-  //     },
-    // Radius-2
-    // radius: {
-    //   value: [10,5],
-    //   measurement: ["px", "%"],
-    // },
-    // Radius-3 
-    // radius: {
-      //     value: [2,4,2],
-      //     measurement: ["px"],
-      //   },
-      // Radius-4
-      // radius: {
-        //     value: [1,0,3,4],
-        //     measurement: ["px", "", "px", "px"],
-        //   },
-        // Radius-5
-        radius: {
-              value: [[10],[20]],
-              measurement: [["px"],["px"]],
-            },
-          // Radius-6
-          // radius: {
-            //     value: [[10,5], [20,30]],
-            //     measurement: [["px", "%"],["px", "rem"]],
-            //   },
-            // Radius-7
-            // radius: {
-              //     value: [[10,5,2], [20,25,30]],
-              //     measurement: [["px", "em", ""], ["px", "pt", "%"]],
-              //   },
-    // Radius-8
-    // radius: {
-      //     value: [[10,5], [20,25,30,35]],
-      //     measurement: [["px", "in"], ["em", "rem", "%", "px"]],
-      //   },
+  .stylize("height")("100px")
+  .stylize("backgroundColor")("#ccc")
+  .stylize("borderWidth")("2px")
+  // .stylize("borderStyle")("solid")
+  .border({
+    radius: {
+      value: [[400], [20, 25]],
+      measurement: [["px"], ["%"]],
+    },
     // bottom: ["dotted", [65, "px"], "warm_2"],
     // left: ["dotted", [20, "px"], "cold_1"],
     // right: ["groove", [200, "px"], "dk-grey"],
     // top: ["double", [100, "px"], "warm_1"],
-    x: ["groove", [200, "px"], "md-grey"],
-    y: ["solid", [200, "px"], "warm_1"],
-    // border: ["groove", [200, "px"], "warm_1"],
+    border: ["groove", [200, "px"]],
     // collapse: "collapse",
     // color: "cold_1",
+    color: ["cold_1", "lh-grey", "warm_1", "warm_2"],
+    // x: ["solid", [200, "px"], "background2"],
+    // y: ["solid", [20, "px"], "warm_2"],
     // spacing: 9,
     // style: "groove",
     // width: {
@@ -76,32 +43,32 @@ Container.stylize("width")("100px")
     //   measurement: "px",
     // },
     // image: {
-      //   width: {
-        //     value: [
-          //       [9, 9],
-          //       [9, 9],
-          //     ],
-          //     measurement: [
+    //   width: {
+    //     value: [
+    //       [9, 9],
+    //       [9, 9],
+    //     ],
+    //     measurement: [
     //       ["px", "pt"],
     //       ["%", "cm"],
     //     ],
     //   },
     //   outset: {
-      //     values: [9, 9, 9, 9],
-      //     measurement: "mm",
-      //   },
-      //   repeat: "round",
-      //   slice: {
-        //     values: ["fill", "fill", 34, 22],
-        //     percent: true
-        //   },
-        //   source: {
-          //     colors: [["lh-grey", 12], ["background2", 555]],
-          //     to: ["bottom", "left"],
-          //     deg: -98,
-          //     repeat: true
-          //   }
-          // }
+    //     values: [9, 9, 9, 9],
+    //     measurement: "mm",
+    //   },
+    //   repeat: "round",
+    //   slice: {
+    //     values: ["fill", "fill", 34, 22],
+    //     percent: true
+    //   },
+    //   source: {
+    //     colors: [["lh-grey", 12], ["background2", 555]],
+    //     to: ["bottom", "left"],
+    //     deg: -98,
+    //     repeat: true
+    //   }
+    // }
   });
 
 Virtual__DOOM.gateway!.insertAdjacentElement("beforeend", Container.element!);

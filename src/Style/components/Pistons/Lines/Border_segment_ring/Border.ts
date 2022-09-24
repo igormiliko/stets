@@ -4,8 +4,17 @@ import { Border_image } from "./Border_image";
 export type TBorder_ = [
   TBorder_styles | TGlobal_CSS_values,
   [TBorder_width?, TCSSmeasurementUnits?],
-  (keyof ColorPallete["colors"])
+  (keyof ColorPallete["colors"])?
 ];
+
+export type TBorder_color =
+  | [
+      keyof ColorPallete["colors"],
+      (keyof ColorPallete["colors"])?,
+      (keyof ColorPallete["colors"])?,
+      (keyof ColorPallete["colors"])?
+    ]
+  | keyof ColorPallete["colors"];
 
 export interface IBorder_config {
   border?: TBorder_;
@@ -15,7 +24,7 @@ export interface IBorder_config {
   bottom?: TBorder_;
   x?: TBorder_;
   y?: TBorder_;
-  color?: keyof ColorPallete["colors"];
+  color?: TBorder_color;
   style?: TBorder_styles;
   radius?: TBorder_radius;
   width?: TBorder_width;

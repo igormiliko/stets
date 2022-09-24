@@ -35,9 +35,9 @@ export class Border_segment_ring extends Abstract_segment_ring {
 
         this.piston.element!.style[
           this.transform_in_border_style_propertie(type)
-        ] = `${config![0]} ${config![1].join("")} ${ColorPallete.getColor(
-          config![2]
-        )}`;
+        ] = `${config![0]} ${config![1].join("")} ${
+          config![2] ? ColorPallete.getColor(config![2]) : ""
+        }`;
         return this.piston.element;
       }
     } catch (error) {
@@ -88,7 +88,7 @@ export class Border_segment_ring extends Abstract_segment_ring {
     this.bottom();
     return this.piston.element;
   }
-  radius() {
+  private radius() {
     this.piston.element!.style.borderRadius = this.TREAT_TCustom_square(
       this.border_config?.radius
     );
@@ -96,16 +96,41 @@ export class Border_segment_ring extends Abstract_segment_ring {
     return this.piston.element;
   }
 
-  // color() {
-  //   return this.piston.element;
-  // }
+  private collapse() {
+    try {
+      if (this.border_config) {
+        this.piston.element!.style.borderCollapse =
+          this.border_config.collapse || "";
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error("Error while applying the collapse propertie => ", error);
+    }
+  }
+
+  private color() {
+    try {
+      if (this.border_config) {
+        this.piston.element!.style.borderColor =
+        Array.isArray(this.border_config.color)
+          ? this.border_config.color
+              .map((color) => (color ? ColorPallete.getColor(color) : ""))
+              .join(" ")
+          : String(this.border_config.color);
+      }
+      return this.piston.element;
+    } catch (error) {
+      console.error(
+        "Error while apllying the color border properie => ",
+        error
+      );
+    }
+  }
+
   // style() {
   //   return this.piston.element;
   // }
   // width() {
-  //   return this.piston.element;
-  // }
-  // collapse() {
   //   return this.piston.element;
   // }
   // spacing() {

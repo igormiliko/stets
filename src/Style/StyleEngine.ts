@@ -36,8 +36,6 @@ export class StyleController extends MediaQueriesController {
     return this
   }
 
-  
-
   stylize(CSSprop: any, element?: typeof this.element) {
     if (!element) {
       element = this.element;
