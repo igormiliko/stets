@@ -26,7 +26,9 @@ type TBorder_styles =
   | "none"
   | "hidden";
 
-  type TBorder_styles_possibilities = TBorder_styles | [TBorder_styles,TBorder_styles?,TBorder_styles?,TBorder_styles?]
+type TBorder_styles_possibilities =
+  | TBorder_styles
+  | [TBorder_styles, TBorder_styles?, TBorder_styles?, TBorder_styles?];
 
 type TBorder_width = TCustom_square<
   "thin" | "medium" | "thick",
@@ -85,14 +87,11 @@ type TCustom_square<V, M> =
         | (V | number)
         | TGlobal_CSS_values
         | [V | number, (V | number)?, (V | number)?, (V | number)?]
-        |[
+        | [
             [V | number, (V | number)?, (V | number)?, (V | number)?],
             [V | number, (V | number)?, (V | number)?, (V | number)?]
           ];
-      measurement:
-        | M
-        | [M, M?, M?, M?]
-        | [[M, M?, M?, M?], [M, M?, M?, M?]]
+      measurement: M | [M, M?, M?, M?] | [[M, M?, M?, M?], [M, M?, M?, M?]];
     }
   | TGlobal_CSS_values
   | (V | number);
