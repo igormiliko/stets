@@ -128,7 +128,7 @@ export class Border_segment_ring extends Abstract_segment_ring {
     }
   }
 
-  style() {
+  private style() {
     try {
       if (this.border_config) {
         this.piston.element!.style.borderStyle = Array.isArray(
@@ -146,7 +146,7 @@ export class Border_segment_ring extends Abstract_segment_ring {
     }
   }
 
-  width() {
+  private width() {
     try {
       if(this.border_config) {
         this.piston.element!.style.borderWidth = this.TREAT_TCustom_square(
