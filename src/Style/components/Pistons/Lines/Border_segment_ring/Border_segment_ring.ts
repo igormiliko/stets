@@ -2,6 +2,7 @@ import ColorPallete from "../../../../config/ColorPallete";
 import { Abstract_segment_ring } from "../../AbstractSegmentRing";
 import { Lines_piston } from "../Lines_piston";
 import { IBorder_config } from "./Border";
+import { Border_image } from "./Border_image";
 
 type TReturn_transform_in_border_style_propertie =
   | "border"
@@ -161,7 +162,7 @@ export class Border_segment_ring extends Abstract_segment_ring {
       );
     }
   }
-  spacing() {
+  private spacing() {
     try {
       if(this.border_config) {
         this.piston.element!.style.borderSpacing =  this.TREAT_TCustom_square(this.border_config?.spacing)
@@ -171,9 +172,17 @@ export class Border_segment_ring extends Abstract_segment_ring {
       console.error("Error while applying the border spacing propertie => ", error)
     }
   }
-  // image() {
-  //   return this.piston.element;
-  // }
+
+  image() {
+    try {
+      if(this.border_config?.image) {
+        new Border_image(this.border_config.image, this.piston.element)
+        return this.piston.element;
+      }
+    } catch (error) {
+      console.error("Error while applying the border image propertie => ", error)
+    }
+  }
 
   async init_config(config: IBorder_config) {
     try {
