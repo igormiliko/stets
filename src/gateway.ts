@@ -2,7 +2,7 @@ import { ComponentFactory } from "./Core/ComponentFactory";
 import Virtual__DOOM from "./Core/V_doom";
 import StyleController from "./Style/StyleEngine";
 import ColorPallete from "./Style/config/ColorPallete";
-import { HelloWorld } from "./Components/helloWorld";
+import { HelloWorld } from "./Components/HelloWorld";
 
 new Virtual__DOOM(document);
 
@@ -13,7 +13,7 @@ const Container = comp_factory.make("main-container", "div");
 Virtual__DOOM.gateway?.insertAdjacentElement("beforeend", Container.element!);
 
 const helloWorld = new HelloWorld(comp_factory);
-
+helloWorld.preRender()
 Container.stylize("width")("100vw")
   .stylize("height")("100vh")
   .stylize("display")("flex")
