@@ -11,7 +11,7 @@ export class ColorPallete {
     'dk-grey': "#373737",
   };
 
-  getColor(color_name: string) {
+  getColor(color_name: keyof ColorPallete['colors']) {
     try {
       const COLOR: any = this.colors as unknown
       return COLOR[color_name]
