@@ -47,22 +47,35 @@ export class HelloWorld extends Component {
   }
 
   private duckeye_styling() {
-    const r_eye = this.comp_factory.make("div", "r_eye");
-    const l_eye = this.comp_factory.make("div", "l_eye");
+    const eye = this.comp_factory.make("div", "eye");
+    const pup = this.comp_factory.make("div", "pup");
+
+    pup
+    ?.stylize("backgroundColor")("#00BEEB")
+      .stylize("width")("10px")
+      .stylize("borderRadius")("100% 100% 50% 50%")
+      .stylize("height")("10px")
 
     const duck__eye = (eye: ComponentFrame) => eye
       ?.stylize("backgroundColor")("white")
+      .stylize("display")("flex")
+      .stylize("justifyContent")("center")
+      .stylize("alignItems")("center")
       .stylize("width")("46px")
       .stylize("height")("44px")
+      .stylize("marginLeft")("40px")
       .stylize("borderRadius")("100% 100% 50% 50%")
       .stylize("border")("solid 2px #00BEEB");
 
-    this.duck_eye_container?.stylize("display")("flex").stylize("position")("absolute").stylize("top")("30%");
     
-    duck__eye(r_eye)
-    duck__eye(l_eye)
 
-    this.duck_eye_container?.hug(r_eye, l_eye);
+    this.duck_eye_container?.stylize("display")("flex").stylize("position")("absolute").stylize("top")("30%").stylize("left")("11%");
+    
+    duck__eye(eye)
+
+    eye.hug(pup)
+
+    this.duck_eye_container?.hug(eye);
   }
   protected mount() {
     this.hello_world_container = this.comp_factory.make(
