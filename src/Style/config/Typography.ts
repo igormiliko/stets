@@ -5,8 +5,7 @@ export class Typography {
     md: "0.8em",
     lg: "1.3em",
     xl: "1.6em",
-    xxl: "2em",
-    // xxl: "2em",
+    xxl: "2em"
   };
 }
 
