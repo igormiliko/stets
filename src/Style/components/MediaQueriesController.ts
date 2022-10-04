@@ -1,4 +1,4 @@
-import { ComponentFrame } from "../../Core/ComponentFrame";
+ import { ComponentFrame } from "../../Core/ComponentFrame";
 
 export class MediaQueriesController {
   protected static $engine: MediaQueriesController;
@@ -31,6 +31,26 @@ export class MediaQueriesController {
     }
     return MediaQueriesController.$engine;
   }
+  
+  private static getCurrentBreakPoint() {
+    const $breakPointsTest: Array<(w: number) => keyof TBreakPoints | null> = [
+      (w) => (w < 576 ? "xs" : null),
+
+      (w) => (w >= 576 && w <= 768 ? "sm" : null),
+
+      (w) => (w >= 768 && w < 992 ? "md" : null),
+
+      (w) => (w >= 992 && w < 1200 ? "lg" : null),
+
+      (w) => (w >= 1200 && w < 1400 ? "xl" : null),
+
+      (w) => (w >= 1400 ? "xxl" : null),
+    ];
+    const [current] = $breakPointsTest
+      .map((a) => a(window.innerWidth))
+      .filter((a) => a);
+    return current;
+  }
 
   protected static ApplyInBreakPoint(
     breakPoint: keyof TBreakPoints,
@@ -51,26 +71,6 @@ export class MediaQueriesController {
     ["resize", "load"].map((e: any) => {
       MediaQueriesController.eventWindow(e);
     });
-  }
-
-  private static getCurrentBreakPoint() {
-    const $breakPointsTest: Array<(w: number) => keyof TBreakPoints | null> = [
-      (w) => (w < 576 ? "xs" : null),
-
-      (w) => (w >= 576 && w <= 768 ? "sm" : null),
-
-      (w) => (w >= 768 && w < 992 ? "md" : null),
-
-      (w) => (w >= 992 && w < 1200 ? "lg" : null),
-
-      (w) => (w >= 1200 && w < 1400 ? "xl" : null),
-
-      (w) => (w >= 1400 ? "xxl" : null),
-    ];
-    const [current] = $breakPointsTest
-      .map((a) => a(window.innerWidth))
-      .filter((a) => a);
-    return current;
   }
 
   xs(call: () => ComponentFrame | undefined) {
