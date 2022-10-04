@@ -23,5 +23,5 @@ The project use the vite development enviroment to help the client to build an a
 
 #### Previous requirements:
 * A node.js dist, the latest with preference - https://nodejs.org/en/
-* The git tool - https://git-scm.com/
+* The git tool - https://git-scm.com/  
 With blood, tears and love ❣️ by Igor Menezes Portela Delgado - BR
