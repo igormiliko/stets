@@ -9,7 +9,7 @@ The principals points are:
 5. Continuous building.  
 After the principals points the organized of the project is the next:  
 * A Virtual DOM like a singleton to abstract the DOM interface t the client;  
-* A style engine wich can wrap a component to apply styles in a curried techinic;  
+* A style engine wich can wrap a component to apply styles in a currying techinic;  
 * A component factory wich return a fresh component, with an id and a tag of your choice;  
 * A component class that abstract a component and extends the Style engine;  
 * A breakpoint engine that change the breakpoints;  
