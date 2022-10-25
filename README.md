@@ -9,7 +9,7 @@ The principals points are:
 5. Continuous building.  
 After the principals points the organized of the project is the next:  
 * A Virtual DOM like a singleton to abstract the DOM interface t the client;  
-* A style engine wich can wrap a component to apply styles in a curried techinic;  
+* A style engine wich can wrap a component to apply styles in a currying techinic;  
 * A component factory wich return a fresh component, with an id and a tag of your choice;  
 * A component class that abstract a component and extends the Style engine;  
 * A breakpoint engine that change the breakpoints;  
@@ -23,5 +23,5 @@ The project use the vite development enviroment to help the client to build an a
 
 #### Previous requirements:
 * A node.js dist, the latest with preference - https://nodejs.org/en/
-* The git tool - https://git-scm.com/
+* The git tool - https://git-scm.com/  
 With blood, tears and love ❣️ by Igor Menezes Portela Delgado - BR
