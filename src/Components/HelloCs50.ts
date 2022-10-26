@@ -4,11 +4,11 @@ import { ComponentFrame } from "../Core/ComponentFrame";
 import ColorPallete from "../Style/config/ColorPallete";
 
 export class HelloCs50 extends Component {
-  hello_world_container: ComponentFrame | null = null;
-  duck_nozzle_up: ComponentFrame | null = null;
-  duck_nozzle_down: ComponentFrame | null = null;
-  duck_eye_container: ComponentFrame | null = null;
-  duck_right_eye: ComponentFrame | null = null;
+  hello_world_container!: ComponentFrame;
+  duck_nozzle_up!: ComponentFrame;
+  duck_nozzle_down!: ComponentFrame;
+  duck_eye_container!: ComponentFrame;
+  duck_right_eye!: ComponentFrame;
   constructor(component_factory: ComponentFactory) {
     super(component_factory);
     this.mount();
