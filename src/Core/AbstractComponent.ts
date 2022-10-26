@@ -7,6 +7,7 @@ export abstract class Component {
   protected comp_factory: ComponentFactory;
   protected color_pallete: ColorPallete = new ColorPallete()
   protected typography: Typography = new Typography()
+
   constructor(factory: ComponentFactory) {
     this.comp_factory = factory;
   }
