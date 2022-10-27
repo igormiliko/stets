@@ -1,4 +1,7 @@
-# STETS - Style Engine in Type Script | Or from german language to english language, Always! 🪄
+# ⚠️ Under construction 🛠️👷🏻
+
+## STETS - Style Engine in Type Script 🪄 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] (https://github.com/igormiliko/stets/blob/main/LICENSE) [![npm version](0.0.0)](https://https://github.com/igormiliko/stets) 
+
 
 By inspiration in te week eight of the CS50x course, will be created a all in one framework to build front-end applications based in TypeScript. Yeah, just it!  
 The principals points are:  
