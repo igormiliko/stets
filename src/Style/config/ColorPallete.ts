@@ -1,5 +1,7 @@
 export class ColorPallete {
-  colors = {};
+  colors = {
+    absinto: "#2D2"
+  };
 
   getColor(color_name: keyof ColorPallete["colors"]) {
     try {

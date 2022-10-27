@@ -19,7 +19,8 @@ The project use the vite development enviroment to help the client to build an a
 ## To use:  
 1. Just clone in your local machine;
 2. Install the dependencies with `npm i` or `yarn`;
-3. Always free your creativity;
+3. Configure the color pallete in `@src/Style/config`
+4. Always free your creativity;
 
 #### Previous requirements:
 * A node.js dist, the latest with preference - https://nodejs.org/en/

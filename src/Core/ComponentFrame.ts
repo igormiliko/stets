@@ -1,5 +1,6 @@
 import Virtual__DOOM from "./V_doom";
 import { StyleController } from "../Style/StyleEngine";
+import { Lines_piston } from "../Style/components/Pistons/Lines/Lines_piston";
 
 export class ComponentFrame extends StyleController {
   id: string;
@@ -12,6 +13,7 @@ export class ComponentFrame extends StyleController {
     this.element = Virtual__DOOM.document.createElement(tagName);
     this.element.setAttribute("id", id);
     this.setElement(this.element);
+    this.Lines_Cilinder = new Lines_piston(this.element)
   }
 
   hug(...elements: ComponentFrame[]) {
