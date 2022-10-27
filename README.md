@@ -1,6 +1,6 @@
 # ⚠️ Under construction 🛠️👷🏻
 
-## STETS - Style Engine in Type Script 🪄 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![npm version]('0.0.0')]
+## STETS - Style Engine in Type Script 🪄 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 By inspiration in te week eight of the CS50x course, will be created a all in one framework to build front-end applications based in TypeScript. Yeah, just it!  
